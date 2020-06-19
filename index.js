@@ -1,6 +1,6 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
-
+const fetch = require('node-fetch');
 
 async function getApplication(oktaDomain, oktaApiToken, oktaApplicationId) {
   return fetch(`https://${oktaDomain}/api/v1/apps/${oktaApplicationId}`, {
