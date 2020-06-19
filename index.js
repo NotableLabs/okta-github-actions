@@ -61,6 +61,7 @@ async function editApplication(oktaDomain, oktaApiToken, oktaApplicationId, acti
     const logoutRedirectUri = core.getInput("logout-redirect-uri");
     const action = core.getInput("action");
 
+    console.log(oktaApiToken, oktaDomain, oktaApplicationId, action);
     const result = await editApplication(oktaDomain, oktaApiToken, oktaApplicationId, action, loginRedirectUri, logoutRedirectUri);
     core.debug(result);
 
