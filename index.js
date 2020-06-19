@@ -53,7 +53,7 @@ async function editApplication(oktaDomain, oktaApiToken, oktaApplicationId, acti
 
 (async () => {
   try {
-    const oktaApiToken = core.getInput("okta_api_token");
+    const oktaApiToken = core.getInput("okta-api-token");
     const oktaDomain = core.getInput("okta-domain");
     const oktaApplicationId = core.getInput("otka-application-id");
     const loginRedirectUri = core.getInput("login-redirect-uri");
