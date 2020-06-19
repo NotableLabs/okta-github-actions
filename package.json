@@ -1,0 +1,26 @@
+{
+  "name": "okta-github-actions",
+  "version": "1.0.0",
+  "description": "Accessing Okta API via Actions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NotableLabs/okta-github-actions.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NotableLabs/okta-github-actions/issues"
+  },
+  "homepage": "https://github.com/NotableLabs/okta-github-actions#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.4",
+    "@actions/github": "^3.0.0",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {}
+}

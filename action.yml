@@ -1,0 +1,25 @@
+name: "Notable Labs - Okta API Access"
+description: "Perform certain Okta API operations in your GitHub Actions workflow."
+author: "Notable Labs"
+inputs:
+  okta-api-token:
+    description: "Okta API token with appropriate authorization permissions"
+    required: true
+  okta-domain:
+    description: 'Domain for your Okta organization (e.g. "mycompany.okta.com")'
+    required: true
+  okta-application-id:
+    description: "ID of the target Okta application"
+    required: true
+  login-redirect-uri:
+    description: "Your login redirect URI"
+    required: true
+  logout-redirect-uri:
+    description: "Your logout redirect URI"
+    required: true
+  action:
+    description: 'Can be "add" or "remove" to denote intended action for the URIs'
+    required: true
+runs:
+  using: "node12"
+  main: "index.js"
