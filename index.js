@@ -3,6 +3,7 @@ const github = require('@actions/github');
 const fetch = require('node-fetch');
 
 async function getApplication(oktaDomain, oktaApiToken, oktaApplicationId) {
+  console.log("URL", `https://${oktaDomain}/api/v1/apps/${oktaApplicationId}`);
   return fetch(`https://${oktaDomain}/api/v1/apps/${oktaApplicationId}`, {
     method: "GET",
     headers: {
