@@ -20,7 +20,7 @@ async function getApplication(oktaDomain, oktaApiToken, oktaApplicationId) {
 
 async function editApplication(oktaDomain, oktaApiToken, oktaApplicationId, action, loginRedirectUri, logoutRedirectUri) {
   const applicationInfo = await getApplication(oktaDomain, oktaApiToken, oktaApplicationId);
-  console.log("applicationInfo", applicationInfo);
+  core.debug(applicationInfo);
   let redirect_uris = applicationInfo.settings.oauthClient.redirect_uris;
   let post_logout_redirect_uris = applicationInfo.settings.oauthClient.post_logout_redirect_uris;
   if (action === "add") {
@@ -61,7 +61,6 @@ async function editApplication(oktaDomain, oktaApiToken, oktaApplicationId, acti
     const logoutRedirectUri = core.getInput("logout-redirect-uri");
     const action = core.getInput("action");
 
-    console.log("variables", oktaApiToken, oktaDomain, oktaApplicationId, action);
     const result = await editApplication(oktaDomain, oktaApiToken, oktaApplicationId, action, loginRedirectUri, logoutRedirectUri);
     core.debug(result);
 
