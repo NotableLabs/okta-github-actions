@@ -56,12 +56,12 @@ async function editApplication(oktaDomain, oktaApiToken, oktaApplicationId, acti
   try {
     const oktaApiToken = core.getInput("okta-api-token");
     const oktaDomain = core.getInput("okta-domain");
-    const oktaApplicationId = core.getInput("otka-application-id");
+    const oktaApplicationId = core.getInput("okta-application-id");
     const loginRedirectUri = core.getInput("login-redirect-uri");
     const logoutRedirectUri = core.getInput("logout-redirect-uri");
     const action = core.getInput("action");
 
-    console.log(oktaApiToken, oktaDomain, oktaApplicationId, action);
+    console.log("variables", oktaApiToken, oktaDomain, oktaApplicationId, action);
     const result = await editApplication(oktaDomain, oktaApiToken, oktaApplicationId, action, loginRedirectUri, logoutRedirectUri);
     core.debug(result);
 
