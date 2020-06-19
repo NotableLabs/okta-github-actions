@@ -11642,6 +11642,7 @@ const github = __webpack_require__(316);
 const fetch = __webpack_require__(596);
 
 async function getApplication(oktaDomain, oktaApiToken, oktaApplicationId) {
+  console.log("URL", `https://${oktaDomain}/api/v1/apps/${oktaApplicationId}`);
   return fetch(`https://${oktaDomain}/api/v1/apps/${oktaApplicationId}`, {
     method: "GET",
     headers: {
