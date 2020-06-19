@@ -50,17 +50,19 @@ async function editApplication(oktaDomain, oktaApiToken, oktaApplicationId, acti
     });
 }
 
-try {
-  const oktaApiToken = core.getInput("okta_api_token");
-  const oktaDomain = core.getInput("okta-domain");
-  const oktaApplicationId = core.getIntput("otka-application-id");
-  const loginRedirectUri = core.getInput("login-redirect-uri");
-  const logoutRedirectUri = core.getInput("logout-redirect-uri");
-  const action = core.getInput("action");
+(async () => {
+  try {
+    const oktaApiToken = core.getInput("okta_api_token");
+    const oktaDomain = core.getInput("okta-domain");
+    const oktaApplicationId = core.getIntput("otka-application-id");
+    const loginRedirectUri = core.getInput("login-redirect-uri");
+    const logoutRedirectUri = core.getInput("logout-redirect-uri");
+    const action = core.getInput("action");
 
-  const result = await editApplication(oktaDomain, oktaApiToken, oktaApplicationId, action, loginRedirectUri, logoutRedirectUri);
-  core.debug(result);
+    const result = await editApplication(oktaDomain, oktaApiToken, oktaApplicationId, action, loginRedirectUri, logoutRedirectUri);
+    core.debug(result);
 
-} catch (error) {
-  core.setFailed(error.message);
-}
+  } catch (error) {
+    core.setFailed(error.message);
+  }
+})();
